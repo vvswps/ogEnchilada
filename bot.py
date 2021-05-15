@@ -1,5 +1,6 @@
 # bot.py
 
+import os
 import discord
 from discord.ext import commands
 import json
@@ -157,5 +158,4 @@ async def on_message(message):
     await client.process_commands(message)
 
 
-with open('token.txt', 'r') as TOKEN:
-    client.run(TOKEN.readline())
+client.run(os.getenv("TOKEN"))
