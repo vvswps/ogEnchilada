@@ -49,7 +49,7 @@ class application_manager:
     def addResponse(self, message):
         self.responses.append(message)
 
-    def compile(self, discord_id):
+    def compileMessages(self, discord_id):
         e = dict(zip(questions, self.responses))
         self.current_app[f'{discord_id}'] = e
 
@@ -103,7 +103,7 @@ async def apply(context):
             #     # await context.message.author.send("Sorry some error occurred") # noqa
             #     continue
 
-    mngr.compile(context.message.author)
+    mngr.compileMessages(context.message.author)
     await context.message.author.send(embed=discord.Embed(description='Finished application', color=0x00ff00)) # noqa
 
     # await context.message.author.send("So this is your application:\n")
