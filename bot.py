@@ -148,7 +148,7 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    if 'baba' in message.content.lower():
+    if 'baba' in message.content.lower() and message.author != client:
         await message.channel.send("Baba ki jai ho!")
 
     # mention = '613451817510109205'
