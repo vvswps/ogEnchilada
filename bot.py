@@ -31,8 +31,8 @@ def fetch():
     try:
         with open("data.json", "r") as file:
             return json.load(file)
-    except Exception as ex:
-        print(ex)
+    except FileNotFoundError:
+        pass
 
 
 def addResponses(list, discord_id):
@@ -107,7 +107,12 @@ async def review(context):
     answers = []
     try:
         id = f'{context.message.mentions[0].name}#{context.message.mentions[0].discriminator}'
-        answers = fetch()[id]
+        try:
+            answers = fetch()[id]
+        except IndexError:
+            context.channel.send("No Applications to review")
+            return
+
     except Exception as ex:
         print(ex)
 

@@ -1,8 +1,5 @@
 .flake8
-data.json
-stuff.txt
 .vscode/settings.json
 token.txt
-test_bot.py
 temp.py
 manBot.py
