@@ -7,3 +7,7 @@
 ## 5-1-2021
 
     Catches command not found error now
+
+## 16-05-2021 - 17-05-2021
+    Fixed everything basically
+ 
